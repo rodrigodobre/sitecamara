@@ -1,0 +1,1288 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Open Sans';
+    src: url("Open_Sans/OpenSans-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+/* Esse não é um aplicativo para celular */
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+body {
+    font: 1em "Open Sans", sans-serif;
+    line-height: 20px;
+    color: #39393d;
+    background-color: #f3f2f3;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+a :hover {
+    text-decoration: none;
+}
+img {
+    border: 0;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.altura_variavel{
+    /* Classe do carousel */
+    height: 768px;
+}
+.fonte_variavel{
+    text-align: left;
+    font-size: xx-large;
+}
+.cabecalho{
+    background-color:white;
+}
+.logotipo img{
+    width: 350px;
+}
+.centro{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1235px;
+    min-width: 320px;
+    width: 100%;
+}
+.celular{
+    display: none;
+}
+.celular input[type="button"]{
+    display: none;
+}
+.menu_fundo{
+    max-width: 1225px;
+    min-width: 320px;
+    width: 100%;
+    height: 60px;
+    border: 1px solid #d6d6d6;
+    background-color: white;
+    display: block;
+    vertical-align: top;
+    font-size: 1em;
+    position: relative;/* A partir do momento que a posição do pai é relativa a dos filhos pode ser absoluta */
+}
+.menu_fundo:before{
+    content:"";
+    width: 98%;
+    height: 5%;
+    position: absolute;
+    bottom:15%;
+    box-shadow: 0 5px 5px #7a7a7a;
+    z-index: -1;
+    left:0.5%;
+    transform: rotate(-0.8deg);
+}
+.menu_fundo:after{
+    content:"";
+    width: 98%;
+    height: 5%;
+    position: absolute;
+    bottom:15%;
+    box-shadow: 0 5px 5px #7a7a7a;
+    z-index: -1;
+    right:0.5%;
+    transform: rotate(0.8deg);
+}
+.novo_menu{
+    z-index: 1000;
+}
+.novo_menu ul{
+    margin-top: 20px;
+    display: block;
+    position: relative;
+    z-index: 2000;
+}
+.novo_menu ul li{
+    display: inline-block;
+    float: left;
+}
+.novo_menu ul li a{
+    padding: 19px;
+    color:#333333;
+}
+.novo_menu ul li a:hover{
+    padding: 19px;
+    background-color: #1e5488;
+    color:white;
+
+}
+.novo_menu ul li ul{
+    display: none;
+}
+.novo_menu ul li:hover ul{
+    display: block;
+    position: absolute;
+    width: 150px;
+}
+.novo_menu ul li ul li{
+    color:#39393d;
+    display: block;
+    width: 100%;
+    background-color: white;
+}
+.novo_menu ul li ul li a{
+    padding: 7px;
+    font-size: 12px;
+    display: block;
+}
+.novo_menu ul li ul li a:hover{
+    padding: 7px;
+    font-size: 12px;
+    display: block;
+
+}
+.novo_menu .ativo{
+    background-color: #1e5488;
+    color: white;
+}/*
+#google_translate_element{ border:none;  }
+#google_translate_element select{
+    border:none;
+}
+#google_translate_element a:hover{
+    background-color:transparent;
+    color: #000;
+}*/
+.pesquisar{
+    float: right;
+    vertical-align: top;
+    margin-top: -15px;
+}
+.pesquisar:hover{
+    background-color: rgba(186, 186, 186, 0.33);
+}
+.pesquisar:hover input[type="text"]{
+    display: block;
+}
+.pesquisar img{
+    width: 40px;
+    cursor:pointer;
+    vertical-align: top;
+    position: absolute;
+    right: 15px;
+    top:10px;
+    z-index: 5;
+
+}
+.pesquisar input[type="text"]{
+    width: 250px;
+    border-radius:0;
+    font-size: 1em;
+    margin-left: 0;
+    padding-top:10px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    vertical-align: top;
+    display: none;
+    font-style:italic;
+    color:rgb(103,103,103);
+    background-color: rgba(30, 84, 136, 0);
+    list-style: none;border:none;
+    -webkit-transition: width .35s ease-in-out;
+    transition: width .35s ease-in-out;
+}
+.esquerda hr{
+    padding:2px;
+    background-color:black;
+    border:none;
+    margin-top: 20px;
+    width: 80%;
+}
+/******************************/
+.conteudo{
+    background-color: rgba(255, 255, 255, 0.4);
+}
+.index{
+    padding: 30px 5px;
+}
+/*******************************/
+.rodape{
+    font-size: 0.9em;
+    background-color: #e5e5e5;
+}
+.superior{
+    display: block;
+    padding: 20px 5px;
+    vertical-align: top;
+}
+.superior ul{
+    vertical-align: top;
+    display: block;
+}
+.superior ul li{
+    vertical-align: top;
+    display: inline-block;
+    max-width: 32.5%;
+    min-width: 320px;
+    width: 100%;
+}
+.superior ul li a{
+    color: #39393d;
+}
+.superior ul li a:hover{
+    color:#1e5488;
+}
+.direitos{
+    padding: 2rem 1rem;
+    background-color: #1e5488;
+    color:white;
+    font-size: 0.9em;
+}
+/********************************/
+/* Slider */
+#slider{
+    max-width: 1366px;
+    min-width: 320px;
+    height: 780px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 2%;
+}
+#slider li{
+    position: absolute;
+    z-index: 0;
+    display: none;
+}
+#slider li.sliderAtivo{
+    z-index: 1;
+}
+#slider img{
+    max-width: 1366px;
+    min-width: 320px;
+    width: 100%;
+}
+#slider .texto{
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    line-height: 1em;
+    font-size: 2em;
+    bottom:60px;
+    left:40px;
+    text-transform: uppercase;
+    color: white;
+}
+#slider .texto p{
+    margin-right: 50px;
+}
+#slider .fundo{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100px;
+    bottom: 50px;
+    background-color: rgba(0,0,0,0.5);
+}
+#slider .botoes{
+    position: absolute;
+    z-index: 3;
+    width: 320px;
+    bottom: 10px;
+    right: 1%;
+}
+#slider .botoes button{
+    border:none;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 7px;
+}
+#slider .botoes button:hover{
+    background-color: #1e5488;
+}
+/********************************/
+.menu_acesso{
+    max-width: 1225px;
+    min-width: 320px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    border: 1px solid #d6d6d6;
+    background-color: #dddddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    position: relative;/* A partir do momento que a posição do pai é relativa a dos filhos pode ser absoluta */
+}
+.menu_acesso:before{
+    content:"";
+    width: 98%;
+    height: 5%;
+    position: absolute;
+    bottom:5%;
+    box-shadow: 0 5px 5px #7a7a7a;
+    z-index: -1;
+    left:0.5%;
+    transform: rotate(-0.8deg);
+}
+.menu_acesso:after{
+    content:"";
+    width: 98%;
+    height: 5%;
+    position: absolute;
+    bottom:5%;
+    box-shadow: 0 5px 5px #7a7a7a;
+    z-index: -1;
+    right:0.5%;
+    transform: rotate(0.8deg);
+}
+.menu_acesso ul{
+
+    width: 450px;
+    height: 200px;
+    text-align: center;
+    margin-left: 2px;
+}
+.menu_acesso a{
+    color:#39393d;
+}
+.menu_acesso ul a:hover{
+    color: whitesmoke;
+}
+#vereador{
+    border-top: 5px solid dodgerblue;
+    border-right:1px solid #f3f3f3;
+}
+#vereador:hover{
+    background-color: dodgerblue;
+}
+#leis{
+    border-top: 5px solid #7cd77c;
+    border-right:1px solid #f3f3f3;
+}
+#leis:hover{
+    background-color: #7cd77c;
+}
+#resumo{
+    border-top: 5px solid indianred;
+}
+#resumo:hover{
+    background-color: indianred;
+}
+/********************************/
+/*  Noticias index              */
+/********************************/
+.coordena{
+    display: block;
+}
+.direita{
+    /*border: 1px solid red;*/
+    width: 400px;
+    display: inline-block;
+    position: relative;
+}
+.esquerda{
+    max-width: 825px;
+    min-width: 320px;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+    /* border: 1px solid blue;*/
+}
+.esquerda .botao{
+    margin-bottom: 40px;
+}
+.esquerda .botao a{
+    padding: 1em 1em;
+    color:whitesmoke;
+    background-color: #1e5488;
+}
+.esquerda .botao a:hover{
+    background-color: #216cac;
+}
+.noticias_index{
+    vertical-align: top;
+    color: #39393d;
+    margin-bottom: 20px;
+}
+.noticias_index a{
+    color:#39393d;
+}
+.noticias_index ul{
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-top: 20px;
+    justify-content: center;
+    align-content: center;
+    max-width: 380px;
+    min-width: 320px;
+    width: 100%;
+    border-bottom:3px solid black;
+}
+.noticias_index ul li{
+    flex-direction: row;
+}
+.social_noticia_index{
+    font-size: 0.9em;
+    padding: 5px;
+    display: inline-block;
+}
+.social_noticia_index div{
+    width: 45%;
+    display: inline-block;
+    padding-left: 10px;
+}
+.foto_noticia_index{
+    position: relative;
+}
+.foto_noticia_index img{
+    width: 100%;
+    height:240px;
+}
+.sobrepor{
+    position:absolute;
+    z-index:1;
+    bottom:3px;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgba(0, 0, 0, 0.71);
+    color: white;
+}
+.texto_noticia_index{
+    font-size: 0.9em;
+}
+.texto_noticia_index p{
+    height: 50px;
+    text-align: center;
+}
+/* Noticias */
+.relacao{
+    width: 98%;
+    margin: 0 auto;
+}
+.relacao ul{
+    display: block;
+}
+.relacao ul:hover{
+    background-color: #1e5488;
+}
+.relacao ul li{
+    padding: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.relacao a{
+    color:#39393d;
+}
+.relacao a:hover{
+    color:white;
+}
+.titulos_rel{
+    width: 98%;
+    margin-left:auto;
+    margin-right: auto;
+}
+.titulos_rel ul{
+    display: block;
+}
+.titulos_rel ul li{
+    padding: 15px;
+    display: inline-block;
+}
+/* Menu lateral */
+.menu_lateral{
+    z-index: 0;
+    display: block;
+    max-width: 400px;
+    min-width: 320px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    vertical-align:top;
+}
+.menu_lateral ul{
+    display: block;
+}
+.menu_lateral ul li{
+    display: block;
+    margin-top:10px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+.menu_lateral ul li:hover{
+    background-color: #1e5488;
+    color: whitesmoke;
+}
+#ml1{/*
+    background: -moz-linear-gradient(230deg, rgb(255, 250, 101) 79%, rgb(0, 148, 50) 0%);
+    background: -webkit-linear-gradient(230deg, rgb(255, 250, 101) 79%, rgb(0, 148, 50) 0%);
+    background: -o-linear-gradient(230deg, rgb(255, 250, 101) 79%, rgb(0, 148, 50) 0%);
+    background: -ms-linear-gradient(230deg, rgb(255, 250, 101) 79%, rgb(0, 148, 50) 0%);
+    background: linear-gradient(320deg, rgb(255, 250, 101) 79%, rgb(0, 148, 50) 0%);
+    color:#39393d;*/
+    background-color: #1e5488;
+    color:white;
+}
+#ml2{/*
+    background: rgb(239, 239, 239);
+    background: -moz-linear-gradient(230deg, rgb(239, 239, 239) 79%, rgb(255, 190, 118) 0%);
+    background: -webkit-linear-gradient(230deg, rgb(239, 239, 239) 79%, rgb(255, 190, 118) 0%);
+    background: -o-linear-gradient(230deg, rgb(239, 239, 239) 79%, rgb(255, 190, 118) 0%);
+    background: -ms-linear-gradient(180deg, rgb(239, 239, 239) 79%, rgb(255, 190, 118) 0%);
+    background: linear-gradient(320deg, rgb(239, 239, 239) 79%, rgb(255, 190, 118) 0%);
+    color: #333333;*/
+    background-color: #1e5488;
+    color:white;
+}
+#ml3{/*
+    background: rgb(90, 140, 181);
+    background: -moz-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: -webkit-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: -o-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: -ms-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: linear-gradient(320deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    color:white;*/
+    background-color: #1e5488;
+    color:white;
+}
+#ml4{/*
+    background: rgb(239, 239, 239);
+    background: -moz-linear-gradient(230deg, rgb(239, 239, 239) 79%, rgb(92, 55, 0) 0%);
+    background: -webkit-linear-gradient(230deg, rgb(239, 239, 239) 79%, rgb(92, 55, 0) 0%);
+    background: -o-linear-gradient(230deg, rgb(239, 239, 239) 79%, rgb(92, 55, 0) 0%);
+    background: -ms-linear-gradient(180deg, rgb(239, 239, 239) 79%, rgb(92, 55, 0) 0%);
+    background: linear-gradient(320deg, rgb(239, 239, 239) 79%, rgb(92, 55, 0) 0%);
+    color: #333333;*/
+    background-color: #1e5488;
+    color:white;
+}
+#ml5{/*
+    background: rgb(90, 140, 181);
+    background: -moz-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: -webkit-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: -o-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: -ms-linear-gradient(230deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    background: linear-gradient(320deg, rgb(90, 140, 181) 79%, rgb(255, 0, 0) 0%);
+    color:white;*/
+    background-color: #1e5488;
+    color:white;
+}
+#ml6{
+    background-color: #1e5488;
+    color:white;
+    height: 50px;
+    line-height: 50px;
+}
+.ml7{
+    border-top:1px solid white;
+    color:#1b1e21;
+    height: 50px;
+    line-height: 50px;
+}
+.ml7 a:hover{
+    background-color: #174d7d;
+    color:whitesmoke;
+}
+.ml8{
+    margin-bottom: 10px;
+}
+/* Eventos */
+.eventos{
+    z-index: 0;
+    display: block;
+    vertical-align: top;
+    padding-top:40px;
+    max-width: 400px;
+    min-width: 320px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 40px;
+}
+.eventos ul{
+    display: block;
+}
+.eventos ul li{
+    display: block;
+    margin-top:1px;
+    height: 40px;
+    line-height: 40px;
+    background-color: whitesmoke;
+    padding-left: 10px;
+}
+.eventos ul li div{
+    display: inline-block;
+    padding-left: 20px;
+}
+/*** Face lateral *****/
+.face_lateral{
+    z-index: 0;
+    display: block;
+    vertical-align: top;
+    max-width: 400px;
+    min-width: 320px;
+    width: 100%;
+    margin-top:20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 40px;
+
+}
+/**** Soundcloud *****/
+.resumo_sessao{
+    vertical-align: bottom;
+    z-index: 0;
+    max-width: 400px;
+    min-width: 320px;
+    width: 100%;
+    margin-right: auto;
+    margin-left:auto;
+    padding-bottom: 40px;
+    display: block;
+}
+/**** Notícias *****/
+.noticias{
+    margin-bottom: 40px;
+    margin-left: 10px;
+}
+.noticias hr{
+    margin-bottom: 20px;
+}
+.noticias h1{
+    line-height: 1.2em;
+    color:#1e5488;
+}
+.noticias p{
+    text-align: justify;
+}
+.noticias span{
+    font-size: 0.9em;
+    margin-top: -20px;
+}
+.noticias .imagem_mostrada{
+    width: 500px;
+    margin: 15px;
+}
+.vereadores{
+    width: 100%;
+    vertical-align: top;
+}
+.vereadores ul{
+    vertical-align: top;
+    display: inline-block;
+    width: 280px;
+    border:2px solid #d9d9d9;
+    margin-left: auto;
+    margin-right: auto;
+}
+.vereadores ul li{
+    vertical-align: top;
+    display: block;
+}
+.vereadores img{
+    vertical-align: top;
+}
+.vereadores input[type="submit"]{
+    vertical-align: top;
+    border:none;
+    border-radius:0;
+    width: 100px;
+    padding: 15px;
+    margin-left: 10px;
+}
+.vereadores input[type="submit"]:hover{
+    background-color: #0e84b5;
+    color:#F2F2F2;
+}
+.vereadores p{
+    margin-top: 5px;
+    text-align: center;
+    background-color: #39393d;
+    color:whitesmoke;
+}
+.dados_vereador{
+    min-height: 450px;
+}
+.dados_vereador h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+}
+.dados_vereador ul{
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+.dados_vereador ul li{
+    width: 200px;
+    display: inline-block;
+}
+.dados_vereador img{
+    max-width: 360px;
+    min-width: 320px;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 15px;
+}
+.municipio{
+    padding-top: 40px;
+    text-align: justify;
+}
+#titulo_m{
+    padding: 15px 30%;
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: #1e5488;
+    color:whitesmoke;
+}
+#titulo_m2{
+    color:#1e5488;
+    text-shadow: #39393d;
+    margin-bottom: 20px;
+}
+.municipio ul{
+    display: block;
+}
+.municipio ul li{
+    display: inline-block;
+    margin:20px;
+}
+.mesa_diretora{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.mesa_diretora p{
+    margin-left: 10px;
+}
+.mesa_diretora a{
+    color: #39393d;
+}
+.ex_presidentes{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px;
+    text-align: center;
+}
+.ex_presidentes ul{
+    display: inline-block;
+    width:250px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+.ex_presidentes ul li{
+    display: block;
+    vertical-align: top;
+}
+.ex_presidentes ul li img{
+    vertical-align: top;
+}
+.tv_camara {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+}
+#tv_camara{
+    padding:2px;
+    border:none;
+    margin-top: 20px;
+    max-width: 1080px;
+    min-width: 320px;
+    width: 100%;
+    height: 600px;
+}
+#tv_camara_i{
+    padding:2px;
+    border:none;
+    margin-top: 20px;
+    max-width: 1080px;
+    min-width: 320px;
+    width: 100%;
+    height: 400px;
+}
+.regimento{
+    padding:30px;
+    cursor: pointer;
+}
+.regimento h2{
+    color:#1e5488;
+    text-align: center;
+}
+.regimento a{
+    color: #39393d;
+}
+.regimento a:hover{
+    color: whitesmoke;
+}
+.regimento .pdfs{
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+    margin-top:30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.regimento .pdfs:hover{
+    background-color: #1e5488;
+}
+.sociais{
+    margin-top: 40px;
+}
+.sociais img{
+    width: 48px;
+}
+.naoprecisa {
+    z-index: 0;
+    display: inline-block;
+    float: right;
+    width:585px;
+    margin-right: 10px;
+}
+.legislativo{
+    padding-bottom: 20px;
+}
+.legislativo .esquerda{
+    vertical-align: top;
+}
+.legislativo .direita{
+    vertical-align: top;
+    padding-right: 20px;
+}
+.legislativo .direita h2{
+    margin-left:80px;
+}
+.topo{
+    background-color: #e8e8e8;
+    font-weight: normal;
+    padding: 40px;
+    line-height: 20px;
+}
+.escondido{
+    display: none;
+}
+.check_legis{
+
+}
+.check_legis ul{
+    display: block;
+    margin-left: 40px;
+}
+.check_legis ul li{
+    display: inline-block;
+    padding:16px 12px;
+    margin-left: 1px;
+}
+.check_legis ul li label{
+    margin-left: 10px;
+    text-align: center;
+}
+.pesq_legis{
+    margin-left: 40px;
+}
+.pesq_legis input[type="text"]{
+    width: 70%;
+    padding: 16px 12px;
+    margin-top: 20px;
+    margin-left:40px;
+    font-size: larger;
+}
+.pesq_legis input[type="submit"]{
+    padding: 16px 12px;
+    margin-top: 20px;
+    font-size: larger;
+    border:none;
+    background-color: #1e5488;
+    color: #e8e8e8;
+}
+.pesq_legis input[type="submit"]:hover{
+    background-color: #216cac;
+    color: #e8e8e8;
+}
+.pesq_legis .avancada{
+    margin-left: 40px;
+}
+.leis{
+    vertical-align: top;
+    margin-left: 20px;
+    margin-right: auto;
+}
+.mostra_resultado{
+    margin-top:20px;
+    margin-left:80px;
+}
+
+@media all and (max-width: 1264px){
+    .altura_variavel{
+        height: 640px;
+    }
+    .esquerda{
+        max-width: 825px;
+        min-width: 320px;
+        width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .direita{
+        max-width: 825px;
+        min-width: 320px;
+        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .cordena{
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+    .menu_lateral{
+        margin-top: 30px;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .menu_acesso{
+        margin-top:20px;
+    }
+    .eventos{
+        vertical-align: top;
+        display: inline-block;
+    }
+    .face_lateral{
+        vertical-align: top;
+        display: inline-block;
+        height: 300px;
+        overflow: auto;
+    }
+    .resumo_sessao{
+        vertical-align: top;
+        display: inline-block;
+        margin-top: 30px;
+    }
+    .sociais{
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    .check_legis ul{
+        margin-left: 0;
+    }
+    .pesq_legis{
+        margin-left: 0;
+    }
+    .pesq_legis .avancada{
+        margin-left: 0;
+    }
+    .legislativo .direita{
+        vertical-align: top;
+        padding-right: 0;
+    }
+    .pesq_legis input[type="text"]{
+        margin-left:auto;
+    }
+    .legislativo .direita h2{
+        margin-left:auto;
+    }
+}
+@media all and (max-width: 1024px){
+    .altura_variavel{
+        height: 540px;
+    }
+    #slider .texto{
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        line-height: 30px;
+        font-size: 30px;
+        bottom:75px;
+        left:20px;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em;
+    }
+    .menu_acesso{
+        margin-top: 20px;
+    }
+    /*****************/
+    .pesquisar{
+        display: inline-block;
+        margin-top: 5px;
+    }
+    .celular{
+        display: inline-block;
+        width: 40px;
+        vertical-align: middle;
+    }
+    .celular input[type="button"]{
+        display: inline-block;
+        font-size: 28px;
+        color: #1e5488;
+        background-color: transparent;
+        border: none;
+        padding: 11px;
+        vertical-align: middle;
+    }
+    .celular input[type="button"]:hover{
+        background-color: #1e5488;
+        color: white;
+    }
+    .novo_menu{
+        display: none;
+        margin-top: -20px;
+        background-color: white;
+    }
+    .novo_menu ul{
+        display: block;
+        max-width: 600px;
+        min-width: 320px;
+        width: 100%;
+        background-color: white;
+    }
+    .novo_menu ul li{
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: white;
+    }
+    .novo_menu ul li ul{
+        margin-top: -5px;
+        overflow: auto;
+    }
+    .novo_menu ul li a{
+        display: block;
+    }
+    .novo_menu ul li:hover ul{
+        display: block;
+        position: relative;
+        width: auto;
+    }
+    .novo_menu ul li ul li a{
+        padding-left: 20px;
+        background-color: #d9d9d9;
+    }
+    .novo_menu ul li ul li a:hover{
+        padding-left: 20px;
+    }
+    #tv_camara{
+        height: 500px;
+    }
+}
+@media all and (max-width: 985px){
+    .altura_variavel{
+        height: 480px;
+    }
+    #slider .texto{
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        line-height: 20px;
+        font-size: 20px;
+        bottom:35px;
+        left:20px;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em;
+    }
+    #slider .fundo{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 60px;
+        bottom: 20px;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .naoprecisa{
+        display: none;
+    }
+}
+@media all and (max-width: 800px){
+    .altura_variavel{
+        height: 440px;
+    }
+    .fonte_variavel{
+        font-size: x-large;
+    }
+    #slider .texto{
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        line-height: 19px;
+        font-size: 19px;
+        bottom:35px;
+        left:20px;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em;
+    }
+    #slider .fundo{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 60px;
+        bottom: 20px;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .tv_camara{
+        width: 100%;
+    }
+    .menu_acesso{
+        flex-direction: column;
+        max-width: 1225px;
+        min-width: 320px;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        border: 1px solid #d6d6d6;
+        background-color: #dddddd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        position: relative;/* A partir do momento que a posição do pai é relativa a dos filhos pode ser absoluta */
+    }
+    .menu_acesso:before{
+        content:"";
+        width: 98%;
+        height: 5%;
+        position: absolute;
+        bottom:5%;
+        box-shadow: 0 5px 5px #7a7a7a;
+        z-index: -1;
+        left:0.5%;
+        transform: rotate(-0.8deg);
+    }
+    .menu_acesso:after{
+        content:"";
+        width: 98%;
+        height: 5%;
+        position: absolute;
+        bottom:5%;
+        box-shadow: 0 5px 5px #7a7a7a;
+        z-index: -1;
+        right:0.5%;
+        transform: rotate(0.8deg);
+    }
+    .menu_acesso ul{
+        width: 100%;
+        height: 200px;
+        text-align: center;
+        margin-left: 2px;
+    }
+    .menu_acesso a{
+        color:#39393d;
+    }
+    .menu_acesso ul a:hover{
+        color: whitesmoke;
+    }
+    .noticias{
+        margin:0;
+    }
+    .noticias .imagem_mostrada{
+        max-width: 800px;
+        min-width: 320px;
+        width: 100%;
+        margin: 0 0 20px;
+    }
+    .noticias span, h1, p{
+        margin-left: 10px;
+    }
+    .noticias p{
+        margin-top: 20px;
+        margin-right: 10px;
+    }
+    .esquerda .botao{
+        margin-top: 60px;
+    }
+    .noticias hr{
+        margin-bottom: 5px;
+    }
+    #tv_camara{
+        height: 400px;
+    }
+}
+@media all and (max-width: 600px){
+    .altura_variavel{
+        height: 360px;
+    }
+    .fonte_variavel{
+        font-size: large;
+    }
+    .logotipo img{
+        width: 320px;
+    }
+    #slider .texto{
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        line-height: 14px;
+        font-size: 14px;
+        bottom:20px;
+        left:10px;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: black 0.1em 0.1em 0.2em;
+    }
+    #slider .fundo{
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 60px;
+        bottom: 10px;
+        background-color: rgba(0,0,0,0.5);
+    }
+    #slider .texto p{
+        margin-right: 10px;
+    }
+    #slider{
+        left: 0;
+        margin:0;
+        padding: 0;
+        max-width: 100%;
+    }
+    #tv_camara{
+        height: 300px;
+    }
+}
+@media all and (max-width: 414px){
+
+    .texto_noticia_index{
+        font-size: 0.6em;
+    }
+    .sobrepor{
+        font-size: 0.7em;
+    }
+    .altura_variavel{
+        height: 280px;
+    }
+    .fonte_variavel{
+        font-size: medium;
+    }
+    #tv_camara{
+        height: 220px;
+    }
+}
+@media all and (max-width: 320px){
+    #slider img{
+        height: 250px;
+    }
+    .pdfs{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #tv_camara{
+        height: 170px;
+    }
+    .altura_variavel{
+        height: 240px;
+    }
+    .fonte_variavel{
+        font-size: small;
+    }
+}
